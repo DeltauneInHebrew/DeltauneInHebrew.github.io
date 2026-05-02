@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>דלטארון - תרגום לעברית</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @font-face {
+            font-family: 'DeltaruneFont';
+            src: url('assets/fonts/fnt_main.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #000000;
+            color: #ffffff;
+            background-image: url("assets/gifs/bg.gif");
+            background-repeat: repeat
+        }
+
+        @media (max-width: 640px) {
+            body {
+                transform: scale(0.75);
+                transform-origin: top center;
+                margin: 0;
+            }
+        }
+
+        .font-deltarune {
+            font-family: 'DeltaruneFont', 'Segoe UI', sans-serif;
+        }
+
+        .pixel-border {
+            border: 2px solid #ffffff;
+            box-shadow:
+                -2px 0 0 #fff,
+                2px 0 0 #fff,
+                0 -2px 0 #fff,
+                0 2px 0 #fff;
+            margin: 2px;
+        }
+
+        .pixel-border2 {
+            border: 1px solid #747474;
+            box-shadow:
+                -1px 0 0 #fff,
+                1px 0 0 #fff,
+                0 -qpx 0 #fff,
+                0 qpx 0 #fff;
+            margin: 1px;
+        }
+
+        .pixel-button {
+            transition: all 0.2s ease;
+        }
+
+        .pixel-button:hover {
+            background-color: #ffff00;
+            color: #000;
+            cursor: pointer;
+            transform: scale(1.05);
+        }
+
+        .heart-bullet::before {
+            content: "♥";
+            color: #ff0000;
+            margin-left: 0.5rem;
+            display: inline-block;
+        }
+
+        .pixel-image {
+            image-rendering: pixelated;
+            image-rendering: crisp-edges;
+        }
+
+        #image-modal { display: none; z-index: 9999; }
+        #image-modal.show { display: flex; }
+        #image-modal-overlay { z-index: 9998; backdrop-filter: none; pointer-events: auto; }
+        #image-modal .modal-content { z-index: 9999; position: relative; }
+        #image-modal-close { background: transparent; border: none; z-index: 10000; position: relative; color: #fff; }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center">
+
+    <!-- Header / Nav -->
+    <div class="w-full  top-0 z-50 bg-black/95 backdrop-blur-sm border-b-2 border-gray-800 flex justify-center shadow-lg">
+        <header class="w-full max-w-5xl flex flex-col sm:flex-row justify-between items-center py-3 px-4 sm:px-8">
+            <div class="text-4xl font-bold tracking-wider text-yellow-400 font-deltarune">
+                DELTARUNE <span class="text-white text-2xl">- פרויקט עברית</span>
+            </div>
+            <nav class="flex gap-6 text-xl mt-3 sm:mt-0 font-deltarune">
+                <a href="#download" class="hover:text-yellow-400 transition-colors">הורדה</a>
+                <a href="#about" class="hover:text-yellow-400 transition-colors">אודות</a>
+                <a href="#pics" class="hover:text-yellow-400 transition-colors">תמונות</a>
+            </nav>
+        </header>
+    </div>
+
+    <main class="w-full max-w-3xl flex-grow space-y-20 sm:p-8 mt-4">
+
+        <!-- Hero Section & Banner -->
+        <section id="banner" class="flex flex-col items-center text-center space-y-6">
+            <h1 class="text-5xl sm:text-6xl font-bold leading-tight font-deltarune">
+                קריס, סוזי, ראלזיי ואחרים...<br/> <span class="text-blue-400">עכשיו בעברית.</span>
+            </h1>
+
+            <!-- Image: Main Banner -->
+            <img src="assets/imgs/IMAGE_LOGO.png" class="w-full h-full object-cover pixel-image">
+            <br>
+            <video autoplay loop muted playsinline class="my-video pixel-border">
+                <source src="assets/vids/looping_720p.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </section>
+
+        <!-- Download and Installation -->
+        <section id="download" class="flex flex-col md:flex-row gap-8 items-stretch">
+
+            <!-- Download Box -->
+            <div class="flex-1 bg-gray-900 p-8 flex flex-col justify-center items-center text-center pixel-border border-green-500">
+                <h2 class="text-5xl mb-4 text-green-400 font-deltarune">הורדת תרגום</h2>
+                <p class="mb-8 text-xl text-gray-300 leading-relaxed">תומך בפרק א'<br> תמיכה בפרקים הבאים תותקן אוטומטית כשהתרגום יושלם.</p>
+                <!-- Update this href with your actual download link -->
+                <a href="zippyzipzip.zip" class="pixel-button font-deltarune bg-white text-black py-5 px-10 text-4xl uppercase tracking-widest inline-block border-2 border-black">
+                    הורד קובץ ZIP
+                </a>
+                <p class="mt-6 text-base text-gray-400 font-bold">גרסה: 1.0 | משקל: ~15MB</p>
+            </div>
+
+            <!-- Instructions Box -->
+            <div class="flex-1 bg-gray-800 p-8 rounded-lg">
+                <h3 class="text-5xl font-bold mb-6 border-b border-gray-600 pb-3 font-deltarune text-white">איך מתקינים?</h3>
+                <ol class="list-decimal list-inside space-y-5 text-md text-gray-300 marker:text-yellow-400">
+                    <li><strong class="text-white">גשו לתיקיית ההתקנה:</strong> פתחו את התיקייה בה מותקן המשחק Deltarune על המחשב שלכם (דרך Steam או התקנה רגילה).</li>
+                    <li><strong class="text-white">חלצו את הקבצים:</strong> פתחו את קובץ ה-ZIP שהורדתם.</li>
+                    <li><strong class="text-white">העתיקו והחליפו:</strong> גררו את כל הקבצים המפולצים לתוך תיקיית ההתקנה של המשחק. אשרו החלפת קבצים קיימים אם חלון קופץ שואל אתכם.</li>
+                    <li><strong class="text-white">שחקו!</strong></li>
+                </ol>
+            </div>
+        </section>
+        <!-- Updates / Blog Section -->
+        <section id="about">
+            <!-- <h2 class="text-4xl font-bold mb-10 text-cyan-400 border-b-2 border-cyan-900 pb-3 inline-block font-deltarune">עדכונים ויומן פיתוח</h2> -->
+            <div class="space-y-8">
+                <article class="bg-gray-900 p-8 border-r-4 border-yellow-400 rounded-l-lg shadow-lg">
+                    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-4 gap-2">
+                        <h3 class="text-5xl font-bold text-white font-deltarune"> הו הו הו!</h3>
+                        <span class="text-base text-gray-500">12 בנובמבר, 2023</span>
+                    </div>
+                    <div class="space-y-6">
+                        <p class="text-lg text-gray-300 leading-relaxed">
+                            זה לקח זמן, אבל הנה זה כאן. ההתחלה של משהו שיהפוך בקרוב לתרגום הלא-רשמי לעברית של דלתארון.
+                        </p>
+                        <p class="text-lg text-gray-300 leading-relaxed">
+                            <span class="text-yellow-300 font-deltarune text-2xl leading-tight">♥️ תרגום מלא לעברית</span> - ידנית. ללא AI.
+                            <br><span class="text-yellow-300 font-deltarune text-2xl leading-tight">♥️ טקסט בתוך הארט נצבע מחדש</span> - כל פיקסל עבר הכשר.
+                            <br><span class="text-yellow-300 font-deltarune text-2xl leading-tight">♥️ עדכונים אוטומטיים</span> - להוריד פעם אחת וזהו.
+                        </p>
+                        <p class="text-lg text-gray-300 leading-relaxed">
+                            ובתור הפתעה קטנה...
+                        </p>
+                        <p class="text-lg text-gray-300 leading-relaxed">
+                            <span class="text-yellow-300 font-deltarune text-2xl leading-tight">♥️ מצב עברית פלוס</span> - מיועד למי ששיחק בעבר ורוצה חוויה טיפה אחרת. משנה חלק מהטקסט למשהו אחר...
+                        </p>
+                        <h3 class="text-3xl font-bold text-white font-deltarune"> שאלות נפוצות:</h3>
+                        <p class="text-lg text-gray-300 leading-relaxed">
+                            <span class="leading-tight font-bold text-white">למה מתייחסים לקריס בלשון רבים?</span> כי טובי כתב את קריס בלשון פנייה They/Them. עברית שפה מגדרית. גם לכיסא שאתם יושבים עליו יש מגדר ולא קיימת אצלנו דרך להתייחס אל קריס בלי להחליט מה המגדר שלו. יש אלטרנטיבות, לוכסנים, נקודות, ערבוב מגדרים, נושא-נשוא, אבל "הם" הרגישה הכי חלקה. סליחות לא-בינאריים.
+                        </p>
+                        <p class="text-lg text-gray-300 leading-relaxed">
+                            <span class="leading-tight font-bold text-white">למה תרגמת שמות?</span> כי אני יכול ואני שיכור מכוח.
+                        </p>
+                        <p class="text-lg text-gray-300 leading-relaxed">
+                            <span class="leading-tight font-bold text-white">דלתארון? זה לא דלטארון?</span> לא. כולכם טועים.
+                        </p>
+                        <p class="text-lg text-gray-300 leading-relaxed">
+                            <span class="leading-tight font-bold text-white">למה הם חוגגים גם פורים וגם קריסמס? הם יהודים או לא?</span> הם מה שתרצו שהם יהיו. התרבות שלנו בנוייה מערבוב של יהדות עם מדיה נוצרית. מן הראוי שדלתארון יישקף את זה.
+                        </p>
+                        <p class="text-lg text-gray-300 leading-relaxed">
+                            <span class="leading-tight font-bold text-white">מאורים? אופלים?</span> כן. אלטרנטיבות אחרות הרגישו לא נכונות. בני-אור/חושך? ממגדר. מאירים/מחשיכים? רומז לתפקיד ולא לגזע. מאירנים/מאפילנים? ילדותי ומרגיש כמו תואר מאפיין.
+                        </p>
+                        <p class="text-lg text-gray-300 leading-relaxed">
+                            <span class="leading-tight font-bold text-white">אני לא אוהב בחירה תרגומית שעשית.</span> אם לא הבנתם עד עכשיו, לבחירות שלכם אין משמעות.
+                        </p>
+                        <p class="text-lg text-gray-300 leading-relaxed">
+                            <span class="leading-tight font-bold text-white">איך מדווחים על טעות?</span> שלחו טופס.
+                        </p>
+                        <p class="text-lg text-gray-300 leading-relaxed">
+                            <span class="leading-tight font-bold text-white">מתי הפרק הבא?</span> כשיהיה גמור. סמכו על הכלב...
+                        </p>
+                        <p class="text-lg text-gray-300 leading-relaxed">
+                            <span class="leading-tight font-bold text-white"></span>
+                        </p>
+                    </div>
+
+                </article>
+            </div>
+        </section>
+
+        <!-- Gameplay Screenshot Grid -->
+        <section id="pics">
+            <div class="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-2 gap-4">
+                <div class="overflow-hidden pixel-border2 aspect-[4/3]">
+                    <img src="assets/imgs/p_1.png" alt="צילום מסך 1" class="w-full h-full object-cover gallery-thumb" data-fullsrc="assets/imgs/p_1.png">
+                </div>
+                <div class="overflow-hidden pixel-border2 aspect-[4/3]">
+                    <img src="assets/imgs/p_2.png" alt="צילום מסך 2" class="w-full h-full object-cover gallery-thumb" data-fullsrc="assets/imgs/p_2.png">
+                </div>
+                <div class="overflow-hidden pixel-border2 aspect-[4/3]">
+                    <img src="assets/imgs/p_3.png" alt="צילום מסך 3" class="w-full h-full object-cover gallery-thumb" data-fullsrc="assets/imgs/p_3.png">
+                </div>
+                <div class="overflow-hidden pixel-border2 aspect-[4/3]">
+                    <img src="assets/imgs/p_4.png" alt="צילום מסך 4" class="w-full h-full object-cover gallery-thumb" data-fullsrc="assets/imgs/p_4.png">
+                </div>
+            </div>
+        </section>
+
+        <!-- Image Modal -->
+        <div id="image-modal" class="fixed inset-0 z-50 hidden items-center justify-center">
+            <div id="image-modal-overlay" class="absolute inset-0 bg-black/40"></div>
+                <div class="relative max-w-full max-h-full p-4 modal-content">
+                <button id="image-modal-close" aria-label="Close" class="absolute top-2 left-2 z-60 text-white text-3xl">&times;</button>
+                <img id="image-modal-img" src="" alt="" class="max-w-[90vw] max-h-[90vh] object-contain rounded-md shadow-2xl">
+            </div>
+        </div>
+
+        <!-- dog -->
+        <section id="end" class="flex justify-center items-center">
+            <img src="assets/gifs/162083.gif" class="pixel-image">
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="w-full max-w-5xl mt-24 border-t-2 border-gray-800 pt-8 pb-8 text-center text-gray-500 text-base p-4">
+        <p class="mb-3">
+            התרגום הוא פרוייקט עצמאי ללא קשר לטובי פוקס
+        </p>
+        <p>
+            <a href="https://github.com/DeltauneInHebrew" class="text-yellow-400 hover:underline">יש לפרוייקט Github</a>
+        </p>
+    </footer>
+
+    <script>
+        // Open image modal when clicking any thumbnail
+        (function(){
+            const modal = document.getElementById('image-modal');
+            const overlay = document.getElementById('image-modal-overlay');
+            const modalImg = document.getElementById('image-modal-img');
+            const closeBtn = document.getElementById('image-modal-close');
+
+            function open(src, alt){
+                modalImg.src = src;
+                modalImg.alt = alt || '';
+                modal.classList.add('show');
+                document.body.style.overflow = 'hidden';
+                setTimeout(()=> modal.focus(), 50);
+            }
+
+            function close(){
+                modal.classList.remove('show');
+                modalImg.src = '';
+                document.body.style.overflow = '';
+            }
+
+            document.querySelectorAll('.gallery-thumb').forEach(img => {
+                img.style.cursor = 'pointer';
+                img.addEventListener('click', e => {
+                    const src = img.dataset.fullsrc || img.src;
+                    open(src, img.alt);
+                });
+            });
+
+            overlay.addEventListener('click', close);
+            closeBtn.addEventListener('click', close);
+
+            // close on ESC
+            document.addEventListener('keydown', e => {
+                if(e.key === 'Escape' && modal.classList.contains('show')) close();
+            });
+        })();
+    </script>
+</body>
+</html>
