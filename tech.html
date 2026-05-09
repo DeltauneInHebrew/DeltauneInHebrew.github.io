@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>דלתארון - תרגום לעברית</title>
+<!--
+
+    ░░░░░░░░░░░░░░░░░░░░
+    ░▄▀▄▀▀▀▀▄▀▄░░░░░░░░░
+    ░█░░░░░░░░▀▄░░░░░░▄░
+    █░░▀░░▀░░░░░▀▄▄░░█░█
+    █░▄░█▀░▄░░░░░░░▀▀░░█
+    █░░▀▀▀▀░░░░░░░░░░░░█
+    █░░░░░░░░░░░░░░░░░░█
+    █░░░░░░░░░░░░░░░░░░█
+    ░█░░▄▄░░▄▄▄▄░░▄▄░░█░
+    ░█░▄▀█░▄▀░░█░▄▀█░▄▀░
+    ░░▀░░░▀░░░░░▀░░░▀░░░
+-->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script data-goatcounter="https://deltaruneinhebrew.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+
+    <style>
+        @font-face {
+            font-family: 'DeltaruneFont';
+            src: url('assets/fonts/fnt_main.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #000000;
+            color: #ffffff;
+            background-image: url("assets/gifs/bg.gif");
+            background-repeat: repeat
+        }
+
+        @media (max-width: 640px) {
+            body {
+                transform: scale(0.9);
+                transform-origin: top center;
+                margin: 0;
+            }
+        }
+
+        .font-deltarune {
+            font-family: 'DeltaruneFont', 'Segoe UI', sans-serif;
+        }
+
+        .pixel-border {
+            border: 2px solid #ffffff;
+            box-shadow:
+                -2px 0 0 #fff,
+                2px 0 0 #fff,
+                0 -2px 0 #fff,
+                0 2px 0 #fff;
+            margin: 2px;
+        }
+
+        .pixel-border2 {
+            border: 1px solid #747474;
+            box-shadow:
+                -1px 0 0 #fff,
+                1px 0 0 #fff,
+                0 -qpx 0 #fff,
+                0 qpx 0 #fff;
+            margin: 1px;
+        }
+
+        .pixel-button {
+            transition: all 0.2s ease;
+        }
+
+        .pixel-button:hover {
+            background-color: #ffff00;
+            color: #000;
+            cursor: pointer;
+            transform: scale(1.05);
+        }
+
+        .heart-bullet::before {
+            content: "♥";
+            color: #ff0000;
+            margin-left: 0.5rem;
+            display: inline-block;
+        }
+
+        .pixel-image {
+            image-rendering: pixelated;
+            image-rendering: crisp-edges;
+        }
+
+        #image-modal { display: none; z-index: 9999; }
+        #image-modal.show { display: flex; }
+        #image-modal-overlay { z-index: 9998; backdrop-filter: none; pointer-events: auto; }
+        #image-modal .modal-content { z-index: 9999; position: relative; }
+        #image-modal-close { background: transparent; border: none; z-index: 10000; position: relative; color: #fff; }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center">
+
+
+
+    <main class="w-full max-w-3xl flex-grow space-y-20 sm:p-8 mt-4">
+
+        <!-- Updates / Blog Section -->
+    <section id="blog-post">
+    <div class="space-y-8">
+        <article class="bg-black p-8 pixel-border rounded-l-lg shadow-lg">
+            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-4 gap-2">
+                <h3 class="text-5xl font-bold text-white font-deltarune">תרגום דלתארון - הצד הטכני</h3>
+            </div>
+
+            <div class="space-y-6">
+
+                <p class="text-lg text-gray-300 leading-relaxed">
+                    רציתי לשחזר את התחושה של התרגומים של מחשבת.
+                    רציתי להרגיש שוב את מה שהרגשתי כשראיתי את סיימון המכשף בשפה <i>שלי</i>.
+                    תמיד יש איזשהו ריחוק כשקוראים בשפה זרה, ולראות את סוזי, ראלזיי ואחרים מדברים בעברית צחה פשוט הופך אותם לקרובים יותר.
+                </p>
+
+                <p class="text-lg text-gray-300 leading-relaxed">
+                </p>
+
+                <p class="text-lg text-gray-300 leading-relaxed">
+                    כמה אנשים ביקשו לשמוע על התהליך של התרגום, והאמת שיש לי מלא דברים נישתיים לספר על כל מה שקרה בדרך, אז הנה זה.
+                </p>
+
+                <h4 class="text-5xl font-bold text-yellow-300 font-deltarune">תשתית</h4>
+
+                <p class="text-lg text-gray-300 leading-relaxed">
+                    ואני ממש לא הראשון שמנסה לעשות את זה.
+                    אנשים הרבה יותר מוכשרים ממני כבר פרסמו תרגומים של דלתארון לשפות אחרות.
+                    חלקם אפילו הלכו צעד קדימה ודיבבו קולות למשחק.
+                </p>
+
+                <p class="text-lg text-gray-300 leading-relaxed">
+                    רובם, ואולי אפילו כולם, מתבססים על התשתית הנהדרת של <a href="https://github.com/Lazy-Desman" class="text-yellow-400 hover:underline">Lazy-Desman/Neprim</a>,
+                    שאחראיים גם על התרגום הרוסי של דלתארון.
+                </p>
+
+                <p class="text-lg text-gray-300 leading-relaxed">
+                    התשתית הזאת מייצאת את כל הטקסט ,וגם טקסטורות שמכילות טקסט,
+                    לקבצים חיצוניים מתוך קבצי ה-DATA של המשחק.
+                </p>
+
+                <p class="text-lg text-gray-300 leading-relaxed">
+                    ככה מתרגמים יכולים לעבוד על כל הטקסט בלי לגעת בקוד בכלל.
+                    מעבר לזה, היא מספקת עוד מלא פיצ'רים שימושיים כמו hot reload,
+                    שינוי מהירות ועוד כל מיני דברים שממש עזרו בתהליך.
+                </p>
+
+                <p class="text-lg text-gray-300 leading-relaxed">
+                    אבל…
+                    היא תומכת רק בשפות משמאל לימין.
+                </p>
+
+                <p class="text-lg text-gray-300 leading-relaxed">
+                    אפילו אם מוסיפים פונטים שתומכים בעברית, מקבלים משהו שבור לחלוטין.
+                </p>
+
+                <p class="text-lg text-gray-300 leading-relaxed">
+                    בשלב הזה הבנתי שאין ברירה.
+                    צריך לערוך את הקוד של טובי.
+                </p>
+
+                <center><img src="assets/imgs/chef.gif" alt="שף" class="center"></center>
+                <br>
+
+                <h4 class="text-5xl font-bold text-yellow-300 font-deltarune">רקע נוסף, מקווה שאתם חנונים</h4>
+
+                <p class="text-lg text-gray-300 leading-relaxed">
+                    בדרך כלל, כשמפתחים משחקים, כותבים קוד בשפה כמו C,
+                    שאחר כך נכנסת לקומפיילר (או בשם העברי המדהים: "מהדר")
+                    ומומרת לקוד מכונה שמחשבים יודעים להריץ.
+                </p>
+
+                <p class="text-lg text-gray-300 leading-relaxed">
+                    שפות אחרות, כמו Java (וגם Python במידה מסוימת), עובדות קצת אחרת...
+                    במקום להוציא קוד מכונה, ה"מהדר" מייצר ByteCode —
+                    סוג של מצב ביניים בין קוד קריא לקוד מכונה.
+                </p>
+
+                <p class="text-lg text-gray-300 leading-relaxed">
+                    אחר כך, בזמן שהתוכנה רצה, מכונה וירטואלית (VM)
+                    מפרשת את הקוד הזה.
+                    הרבה פעמים עושים את זה כדי שאותו קוד יוכל לרוץ על כמה פלטפורמות שונות.
+                </p>
+
+                <p class="text-lg text-gray-300 leading-relaxed">
+                    כשמייצאים משחק מ-GameMaker, אפשר לבחור אם להשתמש ב-VM
+                    או לקמפל ישירות לפלטפורמה.
+                    טובי, יתברך שמו, בחר ב-VM.
+                </p>
+
+                <p class="text-lg text-gray-300 leading-relaxed">
+                    בפועל זה אומר שהקוד הופך ל-ByteCode ואז נארז יחד עם כל הארט,
+                    הסאונד ושאר הקבצים בתוך קובץ DATA.
+                </p>
+
+                <p class="text-lg text-gray-300 leading-relaxed">
+                   והחלק הטוב בכל זה,
+                   אפשר לבצע עליו Decompilation ולהחזיר אותו לצורה יחסית קריאה.
+                </p>
+
+                <img src="assets/imgs/code.png" alt="קוד" class="w-full rounded-lg my-6">
+
+                <p class="text-lg text-gray-300 leading-relaxed">
+                    ועם זה כבר אפשר לעבוד.
+                </p>
+
+                <p class="text-lg text-gray-300 leading-relaxed">
+                    מודים של דלתארון ואנדרטייל מנצלים את זה כבר שנים.
+                    יש <a href="https://github.com/UnderminersTeam/UndertaleModTool" class="text-yellow-400 hover:underline">כלי ממש מוצלח של הקהילה</a> שמחלץ קבצי DATA,
+                    ויכול גם לעשות Decompilation —
+                    תהליך שלוקח ByteCode והופך אותו לקוד קצת יותר אנושי.
+                </p>
+
+                <p class="text-lg text-gray-300 leading-relaxed">
+                    כזה שאפשר לערוך.
+                </p>
+
+                <p class="text-lg text-gray-300 leading-relaxed">
+                    בשלב הזה נשאר לי רק להכין סקריפטים שמחלצים ואורזים מחדש
+                    את הקוד אוטומטית, כדי לא לבזבז זמן על GUI.
+                </p>
+
+                <h4 class="text-5xl font-bold text-yellow-300 font-deltarune">בואו נכתוב קוד</h4>
+
+                <p class="text-lg text-gray-300 leading-relaxed">
+                    התוצאה נראתה בערך ככה:
+                    מאות קבצים, שכל אחד מהם אחראי על פונקציה אחת
+                    או על אספקט מסוים של אובייקט.
+                </p>
+
+                <center><img src="assets/imgs/files.png" alt="קבצים" class="rounded-lg my-6"></center>
+
+                <p class="text-lg text-gray-300 leading-relaxed">
+                    זה נראה מפחיד, אבל האמת שלא באמת.
+                </p>
+
+                <p class="text-lg text-gray-300 leading-relaxed">
+                    לדוגמה, הנה שלושה קבצים שמכילים קוד של אובייקט מסומנים באדום.
+                    אחד לקוד שרץ בזמן יצירת האובייקט,
+                    אחד שרץ בזמן שמציירים אותו,
+                    ואחד שרץ בכל "step" — כלומר כל יחידת זמן במשחק.
+                </p>
+
+                <p class="text-lg text-gray-300 leading-relaxed">
+                    אני לא אתיש אתכם עם כל שינוי קטן שעשיתי,
+                    אבל למשל obj_writer — האובייקט שאחראי על הלוגיקה של הדיאלוגים הראשיים —
+                    הסתכם פחות או יותר ב:
+                </p>
+
+                <p class="text-lg text-gray-300 leading-relaxed">
+                    <span class="text-yellow-300 font-deltarune text-3xl leading-tight">1.</span>
+                    לקחת את נקודת ה-X של הטקסט ביחס למצלמה.
+                    <br>
+                    <span class="text-yellow-300 font-deltarune text-3xl leading-tight">2.</span>
+                    להפוך אותה יחסית לגודל המסך.
+                    <br>
+                    <span class="text-yellow-300 font-deltarune text-3xl leading-tight">3.</span>
+                    לשנות ליישור לימין.
+                    <br>
+                    <span class="text-yellow-300 font-deltarune text-3xl leading-tight">4.</span>
+                    לסדר מחדש את הלוגיקה של הכתיבה כדי שהרווחים בין האותיות יהיו נכונים.
+                    <br>
+                    <span class="text-yellow-300 font-deltarune text-3xl leading-tight">5.</span>
+                    להחליף הרבה סימני + ב--.
+                    <br>
+                    <span class="text-yellow-300 font-deltarune text-3xl leading-tight">6.</span>
+                    להפוך סדר של מספרים וסוגריים כדי שייראו נכון:
+                    )001( → (100).
+                    <br>
+                    <span class="text-yellow-300 font-deltarune text-3xl leading-tight">7.</span>
+                    להפוך את כל הטקסט אם מדובר בטקסט סטטי.
+                </p>
+
+                <p class="text-lg text-gray-300 leading-relaxed">
+                    כל פעם שכתבתי משהו כזה,
+                    הרצתי פקודה שארזה מחדש את כל הקוד
+                    ואז בדקתי במשחק כמה פישלתי.
+                </p>
+
+                <h4 class="text-5xl font-bold text-yellow-300 font-deltarune">כלי התרגום</h4>
+
+                <p class="text-lg text-gray-300 leading-relaxed">
+                    על כלי התרגום עצמו אולי אדבר ביום אחר,
+                    אבל בגדול —
+                    אין לי מילים לכמה שאני שונא לתכנת GUI.
+                    זה אחד המקומות שבהם פשוט הרמתי ידיים
+                    והסברתי ל-AI בדיוק מה אני רוצה.
+                </p>
+
+                <p class="text-lg text-gray-300 leading-relaxed">
+                    ביקשתי ממנו להכין סקריפט פייתון עם QT
+                    (כי התמיכה של GTK ב-RTL פשוט לא קיימת),
+                    הוספתי כמה פיצ'רים ספציפיים שרציתי,
+                    וזהו פחות או יותר.
+                </p>
+
+                <img src="assets/imgs/translator.png" alt="מתרגם" class="w-full rounded-lg my-6">
+                <p class="text-lg text-gray-300 leading-relaxed">
+                    מבין הפיצ'רים שיש לכלי התרגום:
+                </p>
+
+                <p class="text-lg text-gray-300 leading-relaxed">
+                    <span class="text-3xl text-yellow-300 font-deltarune">•</span>
+                    רשימת קטעי טקסט, מה תורגם ומה לא (וכמה נשאר).
+                    <br>
+                    <span class="text-3xl text-yellow-300 font-deltarune">•</span>
+                    הטקסט המקורי באנגלית.
+                    <br>
+                    <span class="text-3xl text-yellow-300 font-deltarune">•</span>
+                    התרגום המקורי ביפנית (התרגום הרשמי היחיד) עם תרגום אוטומטי לאנגלית.
+                    <br>
+                    <span class="text-3xl text-yellow-300 font-deltarune">•</span>
+                    אפשרות להוסיף טקסט אלטרנטיבי למצב עברית פלוס.
+                    <br>
+                    <span class="text-3xl text-yellow-300 font-deltarune">•</span>
+                    רשימת מושגים שגדלה עם עבודת התרגום.
+                    <br>
+                    <span class="text-3xl text-yellow-300 font-deltarune">•</span>
+                    קיצורי מקלדת כדי לשלב את הסימנים המיוחדים בקלות.
+                </p>
+
+                <h4 class="text-5xl font-bold text-yellow-300 font-deltarune">סיכום + וידוי</h4>
+
+                <p class="text-lg text-gray-300 leading-relaxed">
+                    יצרתי כאן קצת מצג שווא.
+                    לא צריך לדעת לתכנת ברמה גבוהה כדי לעשות תרגום למשחק.
+                </p>
+
+                <p class="text-lg text-gray-300 leading-relaxed">
+                    אני זורק פה כל מיני מושגים וקונספטים מפוצצים,
+                    אבל את רובם למדתי תוך כדי תנועה.
+                    לא הכרתי את המבנה של GameMaker,
+                    ולא היה לי מושג איך עושים לו מודים
+                    עד שהתחלתי לחפש.
+                </p>
+
+                <p class="text-lg text-gray-300 leading-relaxed">
+                    ולשם הפרוטוקול,
+                    הנה כמה דברים מביכים שקרו במהלך הפיתוח:
+                </p>
+
+                <p class="text-lg text-gray-300 leading-relaxed">
+                    <span class="text-3xl text-yellow-300 font-deltarune">•</span>
+                     הקרסתי את המשחק עשרות פעמים.
+                    <br>
+                    <span class="text-3xl text-yellow-300 font-deltarune">•</span>
+                    גיליתי שאני מריץ את פונקציית היפוך הטקסט 60 פעמים בשנייה עבור כל אות בכל טקסט.
+                    כנראה גרמתי למחשבים שלכם להזיע.
+                    <br>
+                    <span class="text-3xl text-yellow-300 font-deltarune">•</span>
+                    שכחתי מתמטיקה בסיסית וטעיתי בחישוב ממוצע.
+                    <br>
+                    <span class="text-3xl text-yellow-300 font-deltarune">•</span>
+                    השחתתי את הקבצים המקוריים של המשחק ונאלצתי להתקין הכול מחדש.
+                    <br>
+                    <span class="text-3xl text-yellow-300 font-deltarune">•</span>
+                    פקודת Git לא נכונה מחקה לי עבודה של שלוש שעות.
+                    <br>
+                    <span class="text-3xl text-yellow-300 font-deltarune">•</span>
+                    שגיאת כתיב אחת גרמה לבאג שלקח לי שעות למצוא.
+                </p>
+                <p class="text-lg text-gray-300 leading-relaxed">
+                    מקווה שעם הטקסט הארוך הזה אולי נתתי למישהו רעיון איך להתמודד עם תרגום של משחק אחר.
+                </p>
+
+            </div>
+        </article>
+    </div>
+</section>
+
+        <!-- Bug Report Banner -->
+        <section id="report-banner" class="flex justify-center p-4">
+            <a href="https://forms.gle/AeTgUpWK7yBLaF3N8" class="pixel-button font-deltarune bg-white text-black py-5 px-10 text-3xl uppercase tracking-widest inline-block border-2 border-black">
+                באג? טעות? משהו אחר לדווח? לחצו כאן
+            </a>
+        </section>
+
+        <!-- dog -->
+        <section id="end" class="flex justify-center items-center">
+            <img src="assets/gifs/162083.gif" class="pixel-image">
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="w-full max-w-5xl mt-24 border-t-2 border-gray-800 pt-8 pb-8 text-center text-gray-500 text-base p-4">
+        <p class="mb-3">
+             לקשר ישיר: <a id="email-container" class="text-yellow-400 hover:underline"></a>
+        </p>
+        <p class="mb-3">
+            התרגום הוא פרוייקט עצמאי ללא קשר לטובי פוקס
+        </p>
+        <p>
+            תודה מיוחדת ל-<a href="https://github.com/Lazy-Desman" class="text-yellow-400 hover:underline">Lazy-Desman</a>
+        </p>
+    </footer>
+
+    <script>
+        // I hate bots
+        const user = "DeltaruneInHebrew";
+        const domain = "gmail.com";
+        const element = document.getElementById('email-container');
+        element.innerHTML = `<a href="mailto:${user}@${domain}">${user}@${domain}</a>`;
+    </script>
+</body>
+</html>
